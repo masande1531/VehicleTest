@@ -1,6 +1,6 @@
 # VehicleTest
 ##INSTRUCTIONS
-- Clone https://github.com/masande1531/VehicleTest.git 
+- Clone https://github.com/masande1531/VehicleTest.git repository
 - Run composer install 
 - Change Database setting in the .env file
 - Migrate and Seed the tables
