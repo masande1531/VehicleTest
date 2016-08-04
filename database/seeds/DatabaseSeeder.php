@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
                 'last_name' => 'Assessment', 
             	'username' => 'methys_user', 
             	'email' => 'methys@gmail.com',
-        	'password' => bcrypt('passmethys')
+        		'password' => bcrypt('passmethys')
             ],
         ];
 
