@@ -136,7 +136,7 @@ class ApiVehicleController extends Controller {
         ]);    	
 
 	  	$response = [				
-					'message' => 'Successfully updated Vehicle'
+			'message' => 'Successfully updated Vehicle'
 		];
     	
     	return $response;
@@ -154,7 +154,7 @@ class ApiVehicleController extends Controller {
 	 	$vehicle->delete();		
 
 	 	$response = [				
-					'message' => 'Successfully delted Vehicle.'
+			'message' => 'Successfully delted Vehicle.'
 		]; 
 		return $response;
 	}
