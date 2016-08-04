@@ -58,7 +58,7 @@ class ApiVehicleController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		$this->validate($request, [
             'first_name' => 'required',
