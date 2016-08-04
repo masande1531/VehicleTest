@@ -16,14 +16,14 @@ class DatabaseSeeder extends Seeder
             [
             	'name' => 'Masande',
                 'last_name' => 'Mbondwana', 
-            	'username' => 'masande',  
+            	'username' => 'masande_user',  
              	'email' => 'masande@gmail.com',
               	'password' => bcrypt('passmasande')
             ],
             [ 
             	'name' => 'Methys', 
                 'last_name' => 'Assessment', 
-            	'name' => 'methys', 
+            	'username' => 'methys_user', 
             	'email' => 'methys@gmail.com',
         	'password' => bcrypt('passmethys')
             ],
