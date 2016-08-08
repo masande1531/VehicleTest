@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use App\Http\Requests\VehicleRequest;
 use App\Vehicle;
 use App\Repositories\VehicleRepository;
 use App\Http\Controllers\Controller;
@@ -36,7 +37,7 @@ class VehicleController extends Controller
     * @param  Request  $request
     * @return Response
     */
-    public function index(Request $request)
+    public function index(VehicleRequest $request)
     {
         $vehicles = $request->user()->vehicle()->get();
         
@@ -60,7 +61,7 @@ class VehicleController extends Controller
     * @param  Request  $request
     * @return Response
     */
-    public function store(Request $request)
+    public function store(VehicleRequest $request)
     {
         $this->validate($request, [
             'first_name' => 'required',
@@ -131,7 +132,7 @@ class VehicleController extends Controller
     * @param  Vehicle $vehicle
     * @return Response
     */
-    public function update(Request $request, Vehicle $vehicle)
+    public function update(VehicleRequest $request, Vehicle $vehicle)
     {
 
         $vehicle->update([
