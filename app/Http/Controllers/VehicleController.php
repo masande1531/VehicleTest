@@ -63,19 +63,6 @@ class VehicleController extends Controller
     */
     public function store(VehicleRequest $request)
     {
-        $this->validate($request, [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'contact_number' => 'required',
-            'email_address' => 'required',
-            'manufacturer' => 'required',
-            'email_address' => 'required|email',
-            'type' => 'required',
-            'year' => 'required',
-            'colour' => 'required',
-            'mileage' => 'required'
-        ]);  
-
         $request->user()->vehicle()->create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
