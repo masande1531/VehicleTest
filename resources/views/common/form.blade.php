@@ -60,6 +60,6 @@
 <div class="form-group"> 
     <label for="mileage" class="col-sm-3 control-label">Mileage</label>
     <div class="col-sm-6">
-        <input type="mileage" name="mileage" id="mileage" class="form-control" value="{{ old('email', isset($vehicle->mileage) ? $vehicle->mileage : '') }}" >                          
+        <input type="mileage" name="mileage" id="mileage" class="form-control" value="{{ old('mileage', isset($vehicle->mileage) ? $vehicle->mileage : '') }}" >                          
     </div>
 </div>
