@@ -37,7 +37,7 @@ class VehicleController extends Controller
     * @param  Request  $request
     * @return Response
     */
-    public function index(VehicleRequest $request)
+    public function index(Request $request)
     {
         $vehicles = $request->user()->vehicle()->get();
         
