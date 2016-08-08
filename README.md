@@ -1,6 +1,6 @@
 # VehicleTest
 ##INSTRUCTIONS
-* `git clone ttps://github.com/masande1531/VehicleTest.git  projectname`
+* `git clone https://github.com/masande1531/VehicleTest.git  projectname`
 * `cd projectname`
 * `composer install`
 * Create a database and config *.env*
