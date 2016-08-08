@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Transformers\VehicleTransformer;
 use Session;
 use Carbon\Carbon;
+use App\Http\Requests\VehicleRequest;
         
 class ApiVehicleController extends Controller {
 
@@ -58,20 +59,8 @@ class ApiVehicleController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(VehicleRequest $request)
 	{
-		$this->validate($request, [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'contact_number' => 'required',
-            'email_address' => 'required',
-            'manufacturer' => 'required',
-            'type' => 'required',
-            'year' => 'required',
-            'colour' => 'required',
-            'mileage' => 'required'
-        ]);  
-
         $request->user()->vehicle()->create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
@@ -84,11 +73,10 @@ class ApiVehicleController extends Controller {
             'mileage' => $request->mileage
         ]);
 
-        $response = [
-			'message' => 'Successfully added new Vehicle.'
-		];
-
-        return $response;
+        return response()->json([
+            'message' => 'Successfully added new Vehicle.',
+            'status' => 200
+        ]);
 	}
 
 	/**
@@ -99,9 +87,16 @@ class ApiVehicleController extends Controller {
 	 */
 	public function show($id)
 	{
-		$vehicle = Vehicle::findOrFail($id);
-
-		return $vehicle;
+		$vehicle = Vehicle::find($id);
+        
+        if (empty($vehicle)) {
+            $vehicle = "No results ";
+        }
+        
+        return response()->json([
+            "data" => $vehicle, 
+            'status' => 200
+        ]);
 	}
 
 	/**
@@ -135,12 +130,9 @@ class ApiVehicleController extends Controller {
             'mileage' => $request->mileage
         ]);    	
 
-	  	$response = [				
-			'message' => 'Successfully updated Vehicle'
-		];
-    	
-    	return $response;
-    		
+	  	 return response()->json(['message' => 'Successfully updated Vehicle.', 
+            'status' => 200
+        ]);
 	}
 
 	/**
@@ -153,10 +145,10 @@ class ApiVehicleController extends Controller {
 	{
 	 	$vehicle->delete();		
 
-	 	$response = [				
-			'message' => 'Successfully delted Vehicle.'
-		]; 
-		return $response;
+	 	return response()->json([
+            'message' => 'SSuccessfully delted Vehicle.', 
+            'status' => 200
+        ]);
 	}
 
 }
