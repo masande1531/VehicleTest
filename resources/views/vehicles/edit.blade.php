@@ -5,6 +5,8 @@
     <div class="panel-heading">
         Edit Vehicle
     </div>
+    <div class="panel-body">  
+        @include('common.errors')
          <a href="{{  url('vehicles') }}" class="btn btn-inverse">Back to all Vehicles</a>
         <!-- Edit Vehicle -->
         <form action="{{ url('vehicle/'.$vehicle->id) }}" method="POST" class="form-horizontal">
